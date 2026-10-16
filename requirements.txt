@@ -1,0 +1,96 @@
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anyio==4.14.2
+audioop-lts==0.2.2
+blinker==1.9.0
+brotli==1.2.0
+certifi==2026.7.22
+charset-normalizer==3.4.9
+click==8.4.2
+colorama==0.4.6
+distro==1.9.0
+fastapi==0.141.1
+filelock==3.32.2
+Flask==3.1.3
+fsspec==2026.7.0
+gradio==6.22.0
+gradio_client==2.6.0
+groovy==0.1.2
+h11==0.16.0
+hf-gradio==0.4.1
+hf-xet==1.6.0
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub==1.26.1
+idna==3.18
+itsdangerous==2.2.0
+Jinja2==3.1.6
+jiter==0.16.0
+markdown-it-py==4.2.0
+MarkupSafe==3.0.3
+mdurl==0.1.2
+numpy==2.5.1
+openai==2.53.0
+orjson==3.11.9
+packaging==26.3
+pandas==3.0.5
+pillow==12.3.0
+pydantic==2.13.4
+pydantic_core==2.46.4
+pydub==0.25.1
+Pygments==2.20.0
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+python-multipart==0.0.32
+pytz==2026.3.post1
+PyYAML==6.0.3
+requests==2.34.2
+rich==15.0.0
+safehttpx==0.1.7
+semantic-version==2.10.0
+shellingham==1.5.4
+six==1.17.0
+sniffio==1.3.1
+starlette==1.4.1
+tomlkit==0.14.0
+tqdm==4.70.0
+typer==0.27.1
+typing-inspection==0.4.2
+typing_extensions==4.16.0
+tzdata==2026.3
+urllib3==2.7.0
+uvicorn==0.52.1
+Werkzeug==3.1.8
+
+# ---- LangChain RAG 重构新增依赖（核心，已安装）----
+langchain-core==1.6.0
+langchain-openai==1.6.0
+langchain-community==0.4.2
+langchain-text-splitters==1.1.2
+pypdf==6.16.2
+
+# ---- 已安装的 PDF 解析依赖（unstructured.partition_pdf，作业要求方法）----
+# 以下为 unstructured 及其 PDF/推理栈，本机已安装；若缺失，ingest.py 会自动回退 pypdf。
+unstructured==0.27.1
+pdfminer.six==20260107
+unstructured-inference==1.6.13
+torch==2.13.0+cpu        # CPU 版（配合 --index-url https://download.pytorch.org/whl/cpu）
+transformers==5.16.1
+onnxruntime==1.29.0
+onnx==1.22.0
+matplotlib==3.11.1
+opencv-python-headless==5.0.0.93
+pdf2image==1.17.0
+reportlab==5.0.1         # 用于生成中文测试 PDF
+pi-heif==1.4.0
+scipy==1.18.1
+
+# ---- 可选依赖（增强语义向量，未安装会自动回退 TF-IDF）----
+# sentence-transformers>=2.7.0   # 语义向量模型（已装 torch，可启用）
+# langchain-huggingface          # HuggingFaceEmbeddings 封装
+
+# ---- AI CRM 新增依赖（可选）----
+# 以下为可选依赖：若不安装，embeddings 会自动回退到纯 numpy 的 TF-IDF 向量化，
+# 系统仍可完整运行（RAG 语义质量略降）。Python 3.13 下这些重依赖可能安装失败。
+# torch>=2.2.0                    # sentence-transformers 的依赖，可选
+# 其余（flask / numpy / openai / python-dotenv / requests）已在上方列出。

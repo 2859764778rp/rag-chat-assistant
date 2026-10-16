@@ -1,0 +1,19 @@
+# 环境变量 / 密钥
+.env
+
+# 虚拟环境
+chat-bot.venv/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# Gradio 运行时目录
+.gradio/
+
+# 重复副本子目录
+小助手/
+
+# 运行时日志与数据库
+data/*.log
+data/crm.db*
